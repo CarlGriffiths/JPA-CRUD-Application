@@ -67,15 +67,30 @@ public class main {
                         while (true) {
                             System.out.println("welcome to admin page");
                             System.out.println("Please press 1 to view all movies");
-                            System.out.println("Please press 2 to view exit");
+                            System.out.println("Please press 2 to add movie");
+                            System.out.println("Please press 3 to view exit");
                             choice = in.nextInt();
                             switch (choice) {
                                 case 1:
                                     jpa.allMovies();
                                     break;
-                                    case 2:
+                                case 2:
+                                    System.out.println("Please enter the name of the movie you wish to add");
+                                    String mName = in.nextLine();
+                                    System.out.println("Please enter the rating");
+                                    int rate = in.nextInt();
+                                    System.out.println("Please enter the run time");
+                                    int run = in.nextInt();
+                                    System.out.println("Please enter the budget");
+                                    double budget = in.nextDouble();
+                                    System.out.println("Please enter the box office");
+                                    double box = in.nextDouble();
+
+                                    jpa.addMovie(new Movie(mName, rate, run, budget, box));
+                                    break;
+                                case 3:
                                     System.exit(0);
-                                        break;
+                                    break;
                             }
                         }
                     } else {
