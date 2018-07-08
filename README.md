@@ -1,1 +1,1 @@
-"# sDevCA2" 
+"# CRUD Application using JPA
