@@ -6,6 +6,7 @@
     <class>model.MovieUser</class>
     <class>model.UserAdmin</class>
     <class>model.UserRegular</class>
+    <class>model.Studio</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
       <property name="javax.persistence.jdbc.user" value="carl"/>

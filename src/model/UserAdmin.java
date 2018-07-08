@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Entity
 @Table (name="UserAdmin")
 @DiscriminatorValue( value="a" )
-@PrimaryKeyJoinColumn(referencedColumnName="muId")
+@PrimaryKeyJoinColumn(referencedColumnName="uName")
 public class UserAdmin extends MovieUser {
     
     

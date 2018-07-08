@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model;
 import javax.persistence.*;
 
@@ -18,6 +14,7 @@ public class Movie {
     
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="mId_seq")
+    @OrderBy("mId asc")
     private int mId;
     private String mName;
     private int mRating;
@@ -25,6 +22,10 @@ public class Movie {
     private int runTimeMin;
     private double budget;
     private double boxOffice;
+    
+    @ManyToOne()
+    @JoinColumn(name = "sId")
+    private Studio studio;
     
     
     
@@ -42,11 +43,15 @@ public class Movie {
         this.boxOffice = boxOffice;
     }
 
+    public int getmId() {
+        return mId;
+    }
+
     public String getmName() {
         return mName;
     }
 
-    public int getmAgeRating() {
+    public int getmRating() {
         return mRating;
     }
 
@@ -68,8 +73,8 @@ public class Movie {
         this.mName = mName;
     }
 
-    public void setmAgeRating(int mAgeRating) {
-        this.mRating = mAgeRating;
+    public void setmRating(int rate) {
+        this.mRating = rate;
     }
 
     public void setRunTimeMin(int runTimeMin) {
@@ -83,12 +88,25 @@ public class Movie {
     public void setBoxOffice(double boxOffice) {
         this.boxOffice = boxOffice;
     }
+
+    public Studio getStudio() {
+        return studio;
+    }
+
+    public void setStudio(Studio studio) {
+        this.studio = studio;
+    }
+    
+    
     
     
     @Override
     public String toString() {
-        return "movie id: " + mId + " title: " + mName + " age rating: " + mRating + " runTimeMin: "+runTimeMin + " box office " + boxOffice + " budget " + budget;
+        return "movie id: " + mId + " title: " + mName + " movie rating: " + mRating + " runTimeMin: "+runTimeMin + " box office " + boxOffice + " budget " + budget;
+        
     }
+    
+    
     
     
 

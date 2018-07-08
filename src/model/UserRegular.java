@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "UserRegular")
 @DiscriminatorValue(value = "r")
-@PrimaryKeyJoinColumn(referencedColumnName = "muId")
+@PrimaryKeyJoinColumn(referencedColumnName = "uName")
 public class UserRegular extends MovieUser {
 
     private static int USER_GROUP = 2;
